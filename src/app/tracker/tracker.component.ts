@@ -4,7 +4,7 @@ import { FoodPullerService } from '../food-puller.service';
 @Component({
   selector: 'optavia-tracker',
   templateUrl: './tracker.component.html',
-  styleUrls: ['./tracker.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class TrackerComponent implements OnInit {
 
