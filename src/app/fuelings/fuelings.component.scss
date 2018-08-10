@@ -9,7 +9,7 @@ $main: #351B17;
     }
 
     &__item {
-        grid-column: span 3;
+        grid-column: span 6;
         margin: 12px;
         display: flex;
         justify-content: center;
@@ -23,12 +23,48 @@ $main: #351B17;
 
         span {
             padding: 24px;
+            display: block;
+        }
+
+        .material-icons {
+            cursor: pointer;
+            font-size: 48px;
+            
+            &:first-child {
+                margin-right: 1.2rem;
+            }
+        }
+
+        .heart {
+            &:hover {
+                color: palevioletred;
+            }
+        }
+
+        .check {
+            &:hover {
+                color: green;
+            }
+        }
+
+        .favorites {
+            display: none;
+        }
+
+        &:hover {
+            span {
+                display: none;
+            }
+
+            .favorites {
+                display: block;
+            }
         }
     }
 }
 
 @media screen and (max-width: 768px) {
     .fueling__item {
-        grid-column: span 6;
+        grid-column: span 12;
     }
 }

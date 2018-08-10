@@ -5,8 +5,13 @@
 <blockquote>On the OPTAVIA® program, you’ll choose from more than 60 delicious, convenient, nutritionally interchangeable, and scientifically-designed Fuelings including shakes, soups, bars, hot beverages, hearty choices, biscuits, pretzels, pudding, and brownies. Each Fueling contains high-quality protein which helps retain lean muscle mass, and also contains a patented probiotic, GanedenBC30® which helps support digestive health. Talk to your OPTAVIA Coach™ to learn more about our portfolio of Fuelings.</blockquote>
 
 <div class="fueling__grid" *ngIf="foodData">
-  <div class="fueling__item" *ngFor="let item of foodData.items">
+  <div class="fueling__item"
+    *ngFor="let item of foodData.items">
     <span>{{item.item_name}}</span>
+    <div class="favorites">
+        <i class="material-icons check">check_circle</i>
+        <i class="material-icons heart">favorite</i>
+    </div>
   </div>
 </div>
 </section>

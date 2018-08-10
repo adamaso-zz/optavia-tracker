@@ -14,9 +14,18 @@ export class FuelingsComponent implements OnInit {
   constructor(private foodPullerService: FoodPullerService) { }
 
   ngOnInit() {
-    this.foodPullerService.pullFoods().subscribe(((data)=> {
+    this.foodPullerService.pullFoods().subscribe(((data) => {
       this.foodData = data;
     }));
+  }
+
+  showBar(event) {
+    event.style.display = 'none';
+  }
+
+  hideBar(event) {
+    event.style.display = 'block';
+
   }
 
 }
