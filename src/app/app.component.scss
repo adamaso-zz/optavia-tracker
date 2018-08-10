@@ -14,8 +14,20 @@ $main: #351B17;
     align-items: flex-start;
 }
 
+.content {
+    padding: 2.4rem;
+    margin: 3.6rem;
+    color: $main;
+}
+
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: $main;
 }
 
 h1 {
@@ -31,8 +43,13 @@ h1 {
     }
 }
 
-p {
+p, blockquote, span {
     font-family: 'Open Sans', sans-serif;
+}
+
+blockquote {
+    line-height: 24px;
+    margin: 12px 0;
 }
 
 .tiles {
@@ -70,5 +87,9 @@ p {
 @media only screen and (max-width: 768px) {
     .tile {
         grid-column: span 12;
+    }
+
+    .content {
+        margin: 0;
     }
 }

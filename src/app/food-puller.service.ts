@@ -6,7 +6,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 })
 export class FoodPullerService {
 
-  private url = 'https://www.nutritionix.com/nixapi/brands/579846a480c0dbd36eed07b9/items/1?limit=150&search=';
+  private url = 'https://www.nutritionix.com/nixapi/brands/579846a480c0dbd36eed07b9/items/1?limit=100&search=';
 
   pullFoods() {
     return this.http.get(this.url);

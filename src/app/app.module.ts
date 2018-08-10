@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
-import { LeanAndGreenComponent } from './lean-and-green/lean-and-green.component';
+import { ReorderComponent } from './reorder/reorder.component';
 import { DiaryComponent } from './diary/diary.component';
 import { FuelingsComponent } from './fuelings/fuelings.component';
 
@@ -13,7 +13,7 @@ import { FuelingsComponent } from './fuelings/fuelings.component';
   declarations: [
     AppComponent,
     TrackerComponent,
-    LeanAndGreenComponent,
+    ReorderComponent,
     DiaryComponent,
     FuelingsComponent
   ],

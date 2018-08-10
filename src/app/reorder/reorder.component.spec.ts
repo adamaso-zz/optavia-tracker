@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeanAndGreenComponent } from './lean-and-green.component';
+import { ReorderComponent } from './reorder.component';
 
-describe('LeanAndGreenComponent', () => {
-  let component: LeanAndGreenComponent;
-  let fixture: ComponentFixture<LeanAndGreenComponent>;
+describe('ReorderComponent', () => {
+  let component: ReorderComponent;
+  let fixture: ComponentFixture<ReorderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeanAndGreenComponent ]
+      declarations: [ ReorderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LeanAndGreenComponent);
+    fixture = TestBed.createComponent(ReorderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
