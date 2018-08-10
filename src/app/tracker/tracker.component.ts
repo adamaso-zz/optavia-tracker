@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodPullerService } from '../food-puller.service';
 
 @Component({
   selector: 'optavia-tracker',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrackerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private foodPullerService: FoodPullerService) { }
 
   ngOnInit() {
+    this.foodPullerService.pullFoods().subscribe(((data)=> {
+      console.log(data);
+    }))
   }
 
 }
