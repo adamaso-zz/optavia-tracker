@@ -1,11 +1,27 @@
 $main: #351B17;
 
-.diary {
+.reorder {
     &__grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-gap: 12px;
         margin-left: -12px;
+    }
+
+    &__blank {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.4rem;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border: 2px dashed $main;
+        margin: 3.6rem 0;
+        text-align: center;
+
+        p {
+            margin: 1.2rem 0;
+        }
     }
 
     &__item {
@@ -29,6 +45,10 @@ $main: #351B17;
         .material-icons {
             cursor: pointer;
             font-size: 48px;
+            
+            &:first-child {
+                margin-right: 1.2rem;
+            }
         }
 
         .heart {
@@ -60,7 +80,7 @@ $main: #351B17;
 }
 
 @media screen and (max-width: 768px) {
-    .diary__item {
+    .reorder__item {
         grid-column: span 12;
     }
 }

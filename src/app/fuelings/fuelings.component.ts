@@ -10,6 +10,8 @@ import { FoodPullerService } from '../food-puller.service';
 export class FuelingsComponent implements OnInit {
 
   public foodData;
+  public reorderList = JSON.parse(localStorage.getItem('reorder'));
+  // public favoritesList = [];
 
   constructor(private foodPullerService: FoodPullerService) { }
 
@@ -19,13 +21,18 @@ export class FuelingsComponent implements OnInit {
     }));
   }
 
-  showBar(event) {
-    event.style.display = 'none';
+  addToReorderList(item) {
+    if (!this.reorderList.includes(item)) {
+      this.reorderList.push(item);
+    }
+    localStorage.setItem("reorder", JSON.stringify(this.reorderList));
   }
 
-  hideBar(event) {
-    event.style.display = 'block';
-
-  }
+  // addToFavoritesList(item) {
+  //   if (!this.favoritesList.includes(item)) {
+  //     this.favoritesList.push(item);
+  //   }
+  //   localStorage.setItem("favorites", JSON.stringify(this.favoritesList));
+  // }
 
 }

@@ -1,3 +1,18 @@
-<section class="header">
-  <h2>Food Diary</h2>
-</section>
+<section class="content">
+
+    <h2>Food Diary</h2>
+    
+    <blockquote>Enter your OptaVia meals to keep track of everything!</blockquote>
+    
+    <div class="diary__grid">
+      <div class="diary__item"
+        *ngFor="let item of foodData.items">
+        <span>{{item.item_name}}</span>
+        <div class="favorites">
+            <i class="material-icons check"
+            (click)="addToReorderList(item.item_name)"
+            >check_circle</i>
+        </div>
+      </div>
+    </div>
+    </section>
