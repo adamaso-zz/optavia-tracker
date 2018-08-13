@@ -1,18 +1,35 @@
 <section class="content">
 
-    <h2>Food Diary</h2>
-    
-    <blockquote>Enter your OptaVia meals to keep track of everything!</blockquote>
-    
-    <div class="diary__grid">
-      <div class="diary__item"
-        *ngFor="let item of foodData.items">
-        <span>{{item.item_name}}</span>
-        <div class="favorites">
-            <i class="material-icons check"
-            (click)="addToReorderList(item.item_name)"
-            >check_circle</i>
-        </div>
+  <header>
+    <div class="left">
+      <h2>Food Diary</h2>
+      <blockquote>Enter your OptaVia meals to keep track of everything!</blockquote>
+    </div>
+    <button (click)="openModal()">Add to Diary</button>
+  </header>
+
+  <!-- <div class="diary__grid">
+    <div class="diary__item" *ngFor="let item of foodData.items">
+      <span>{{item.item_name}}</span>
+      <div class="favorites">
+        <i class="material-icons check" (click)="addToReorderList(item.item_name)">check_circle</i>
       </div>
     </div>
-    </section>
+  </div> -->
+</section>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+
+      <div class="modal__diary">
+      <h2>Daily Fuelings</h2>
+
+      <h3>Fueling 1</h3>
+      
+    </div> 
+
+    </div>
+  
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodPullerService } from '../food-puller.service';
 
 @Component({
   selector: 'app-diary',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiaryComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private foodPullerService: FoodPullerService) { }
+  public modal;
+  public foodList;
+  
+  // When the user clicks on the button, open the modal 
+  openModal() {
+    this.modal.style.display = "block";
   }
 
+  // When the user clicks on <span> (x), close the modal
+  closeModal() {
+    this.modal.style.display = "none";
+  }
+
+  ngOnInit() {
+    this.modal =  document.getElementById('myModal');
+
+    this.foodPullerService.pullFoods().subscribe(((data) => {
+      this.foodList = data;
+      console.log(this.foodList.items);
+    }));
+  }
+
+  formControlValue = '';
+ 
 }
