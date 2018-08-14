@@ -9,6 +9,9 @@ import { ReorderComponent } from './reorder/reorder.component';
 import { DiaryComponent } from './diary/diary.component';
 import { FuelingsComponent } from './fuelings/fuelings.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { FuelingsComponent } from './fuelings/fuelings.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgSelectModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
