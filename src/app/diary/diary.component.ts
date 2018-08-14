@@ -13,8 +13,27 @@ export class DiaryComponent implements OnInit {
   public modal;
   public foodList;
   public fuelingNum = ['', '', '', '', ''];
-
+  public diaryDisplay;
+  public diarydate;
   public myDiary;
+
+  public fds = [
+    {
+      fueling: ''
+    },
+    {
+      fueling: ''
+    },
+    {
+      fueling: ''
+    },
+    {
+      fueling: ''
+    },
+    {
+      fueling: ''
+    },
+  ];
 
   // When the user clicks on the button, open the modal 
   openModal() {
@@ -24,6 +43,17 @@ export class DiaryComponent implements OnInit {
   // When the user clicks on <span> (x), close the modal
   closeModal() {
     this.modal.style.display = "none";
+
+    const newEntry = {
+      'entries': this.fds,
+      'date': this.diarydate
+    }
+
+    this.diaryDisplay.push(newEntry);
+
+    console.log(this.diaryDisplay);
+
+    localStorage.setItem('diaryEntries', JSON.stringify(this.diaryDisplay));
   }
 
   ngOnInit() {
@@ -33,22 +63,18 @@ export class DiaryComponent implements OnInit {
       this.foodList = data;
     }));
 
-    this.myDiary = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+    this.diaryDisplay = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+    console.log(this.diaryDisplay);
+
   }
 
   addFueling(item, index) {
-    const newEntries = {
-      'food': item.item_name,
-      'fuelingNum': index + 1
-    };
-
-    if (this.myDiary.length < index) {
-      this.myDiary.push(newEntries);
-    } else {
-      this.myDiary[newEntries.fuelingNum] = newEntries;
-    }
-
-    localStorage.setItem('diaryEntries', JSON.stringify(this.myDiary));
+    this.fds[index].fueling = item.item_name;
   }
+
+  onDateChange(event) {
+    this.diarydate = event;
+  }
+
 
 }

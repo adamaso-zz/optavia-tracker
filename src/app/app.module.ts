@@ -12,6 +12,9 @@ import { FuelingsComponent } from './fuelings/fuelings.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 
+import { UtcDatepickerModule } from 'angular-utc-datepicker';
+import { MomentModule } from 'angular2-moment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgSelectModule, FormsModule
+    NgSelectModule, FormsModule,
+    UtcDatepickerModule, MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

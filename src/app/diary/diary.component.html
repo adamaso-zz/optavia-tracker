@@ -8,6 +8,13 @@
     <button (click)="openModal()">Add to Diary</button>
   </header>
 
+  <div class="entries" *ngFor="let entries of diaryDisplay">
+    <h2>{{entries.date}}</h2>
+    <ul>
+      <li *ngFor="let fueling of entries.entries">{{fueling.fueling}}</li>
+    </ul>
+  </div>
+
   <!-- <div class="diary__grid">
     <div class="diary__item" *ngFor="let item of foodData.items">
       <span>{{item.item_name}}</span>
@@ -24,7 +31,11 @@
     <span class="close" (click)="closeModal()">&times;</span>
 
     <div class="modal__diary">
-      <h2>Daily Fuelings</h2>
+      <h2>Add Fuelings</h2>
+
+      <h3>Date</h3>
+      <utc-datepicker [date]="myDate" format="MM/DD/YYYY" (dateChange)="onDateChange($event)" placeholder="meep"></utc-datepicker>
+
 
       <div *ngFor="let fueling of fuelingNum; let i = index;">
         <h3>Fueling {{i + 1}}</h3>
