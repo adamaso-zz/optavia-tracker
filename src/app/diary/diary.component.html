@@ -27,7 +27,7 @@
       <h2>Add Fuelings</h2>
 
       <h3>Date</h3>
-      <utc-datepicker [date]="myDate" format="MM/DD/YYYY" (dateChange)="onDateChange($event)" placeholder="meep"></utc-datepicker>
+      <utc-datepicker format="MM/DD/YYYY" (dateChange)="onDateChange($event)" placeholder="meep"></utc-datepicker>
 
 
       <div *ngFor="let fueling of fuelingNum; let i = index;">
