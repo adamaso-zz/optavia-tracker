@@ -11,7 +11,9 @@
   <div class="entries" *ngFor="let entries of diaryDisplay">
     <h2>{{entries.date}}</h2>
     <ul>
-      <li *ngFor="let fueling of entries.entries">{{fueling.fueling}}</li>
+      <li
+      class="fueling"
+      *ngFor="let fueling of entries.entries; let i = index;"><b>Fueling {{i+1}}</b> {{fueling.fueling}}</li>
     </ul>
   </div>
 </section>

@@ -9,7 +9,7 @@ import { TrackerComponent } from './tracker/tracker.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: TrackerComponent },
+  { path: 'home', component: DiaryComponent },
   { path: 'reorder', component: ReorderComponent },
   { path: 'fuelings', component: FuelingsComponent },
   { path: 'diary', component: DiaryComponent },
