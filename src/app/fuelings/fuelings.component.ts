@@ -10,8 +10,7 @@ import { FoodPullerService } from '../food-puller.service';
 export class FuelingsComponent implements OnInit {
 
   public foodData;
-  public reorderList = JSON.parse(localStorage.getItem('reorder'));
-  // public favoritesList = [];
+  public reorderList;
 
   constructor(private foodPullerService: FoodPullerService) { }
 
@@ -19,6 +18,8 @@ export class FuelingsComponent implements OnInit {
     this.foodPullerService.pullFoods().subscribe(((data) => {
       this.foodData = data;
     }));
+
+    this.reorderList = JSON.parse(localStorage.getItem('reorder')) || [];
   }
 
   addToReorderList(item) {
@@ -27,12 +28,5 @@ export class FuelingsComponent implements OnInit {
     }
     localStorage.setItem("reorder", JSON.stringify(this.reorderList));
   }
-
-  // addToFavoritesList(item) {
-  //   if (!this.favoritesList.includes(item)) {
-  //     this.favoritesList.push(item);
-  //   }
-  //   localStorage.setItem("favorites", JSON.stringify(this.favoritesList));
-  // }
 
 }

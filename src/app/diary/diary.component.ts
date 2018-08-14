@@ -75,6 +75,4 @@ export class DiaryComponent implements OnInit {
   onDateChange(event) {
     this.diarydate = event;
   }
-
-
 }
